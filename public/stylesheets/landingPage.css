@@ -1,0 +1,482 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu';
+    letter-spacing: 2px;
+}
+
+
+.navbar-thing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #1a1a1a;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.logo {
+    /* margin-left: 4rem; if we use space between*/
+    margin: 10px;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+}
+
+.brand:hover {
+    color: white;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-links li a {
+    text-decoration: none;
+    /* pink #f8c8dc; */
+    position: relative;
+    color: white;
+    padding: 1em;
+    font-size: clamp(12px, 2vw, 20px);
+    display: block;
+    transition: color 0.2s;
+}
+
+
+
+.navbar-links li a:hover {
+    color: red;
+}
+
+.githubLink {
+
+    /* fontsize 32*/
+    font-size: clamp(32px, 3vw, 50px);
+}
+
+.linkedinLink {
+    font-size: clamp(32px, 3vw, 50px);
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.1rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+
+}
+
+
+.toggle-button span {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    transition: background-color 0.4s;
+}
+
+
+
+.end-foot {
+    display: flex;
+    background-color: black;
+    flex-flow: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: auto;
+}
+
+.end-foot p {
+    margin-bottom: 1px;
+}
+
+.end-foot a {
+    color: white;
+}
+
+.end-foot a:hover {
+    color: white;
+}
+
+/* main {
+    height: 70vh;
+} */
+
+.hero-image {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/IMG-0294.jpg") no-repeat;
+    background-size: cover;
+    background-position: relative;
+    box-shadow: 0 15px 15px -2px gray;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text {
+    /* padding-left: 20px; */
+    text-align: center;
+}
+
+.hero-text h5 {
+    font-size: clamp(10px, 1.7vw, 20px);
+}
+
+.intro {
+    font-size: clamp(16px, 3vw, 64px);
+}
+
+.hero-buttons {
+    display: flex;
+    margin: 20px;
+}
+
+.resume {
+    /* width: 250px; */
+    margin: 0px 20px;
+    font-size: clamp(16px, 2vw, 128px);
+    background-color: #e8421e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    transition: background-color 0.2s;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.contact {
+    /* width: 250px; */
+    margin: 0px 20px;
+    font-size: clamp(16px, 2vw, 128px);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    box-shadow: 0px 15px 10px -15px #111;
+    transition: background-color 0.2s;
+}
+
+.projects {
+    display: flex;
+    padding: 10px;
+
+    flex-flow: column;
+    height: auto;
+}
+
+.title {
+    background: -webkit-linear-gradient(320deg, white, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: clamp(1rem, 7vw, 10rem);
+    filter: drop-shadow(6px 6px #333);
+}
+
+.resume:hover {
+    cursor: pointer;
+    background-color: #c80000;
+}
+
+.contact:hover {
+    cursor: pointer;
+    background-color: #bababa;
+}
+
+.title-for-project {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.title-for-project h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: 200;
+    font-size: clamp(30px, 3vw, 70px);
+    color: rgba(0, 0, 0, 1);
+    text-decoration: wavy;
+}
+
+.title-for-project p {
+    margin-bottom: -17px;
+}
+
+.title-for-project p:nth-child(1) {
+    margin-top: -7px;
+}
+
+/* Making the bottom arrow actually having padding */
+.title-for-project p:nth-child(3) {
+    margin-bottom: 4px;
+}
+
+.arrow {
+    border: solid;
+    border-color: rgba(138, 138, 138, .3);
+    border-width: 0 0 0 0;
+    border-right-width: min(.4vw, 4px);
+    border-bottom-width: min(.4vw, 4px);
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: border-width 0.2s;
+}
+
+
+.all-arrows:hover .arrow,
+.title-for-project:hover .arrow {
+    border-right-width: min(.9vw, 8px);
+    border-bottom-width: min(.9vw, 8px);
+}
+
+.all-projects {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-evenly;
+    height: auto;
+}
+
+.card {
+    display: inline-block;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    height: auto;
+    box-shadow: 15px 15px 10px -15px #111;
+    width: 20rem !important;
+    margin-top: 10px;
+}
+
+.card-title {
+    font-size: clamp(15px, 2vw, 20px);
+}
+
+.card-text {
+    font-size: clamp(10px, 2vw, 15px);
+}
+
+.card-body {
+    box-sizing: border-box;
+    height: auto;
+}
+
+.card-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 90px;
+}
+
+.sourceCode {
+    margin: 0px 10px;
+    font-size: clamp(10px, 2vw, 16px);
+    background-color: #e8421e;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    transition: background-color 0.2s;
+}
+
+
+
+.live-test {
+    margin: 0px 10px;
+    font-size: clamp(10px, 2vw, 16px);
+    background-color: grey;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px;
+    transition: background-color 0.2s;
+}
+
+
+@media (min-width: 780px) {
+    .homeLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .homeLink:hover::before {
+        width: 100%;
+    }
+
+
+    .aboutLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .aboutLink:hover::before {
+        width: 100%;
+    }
+
+    .contactLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .contactLink:hover::before {
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 780px) {
+
+    /* .brand {
+        margin-left: 10vw;
+    } */
+
+    .brand img {
+        width: 250px;
+        height: 50px;
+    }
+
+    .logo {
+        margin: 10px;
+    }
+
+
+    /* trynna see this max */
+    .toggle-button {
+        display: flex;
+        transition: color 0.2s;
+    }
+
+    .toggle-button:hover span {
+        background-color: red;
+
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-thing {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        background: rgba(99, 99, 99, 0.5);
+        text-align: center;
+        border-block-style: solid;
+        border-color: rgb(125, 125, 125);
+        border-width: 1px;
+    }
+
+    .navbar-links li:first-child {
+        border-top-width: 0;
+    }
+
+    .navbar-links li:last-child {
+        border-bottom-width: 0;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .hero-image {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .githubLink {
+
+        /* fontsize 32*/
+        font-size: 32px;
+    }
+
+    .linkedinLink {
+        font-size: 32px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+    }
+
+    .resume {
+        margin-top: 10px;
+        width: 60vw;
+    }
+
+    .contact {
+        margin-top: 10px;
+        width: 60vw;
+    }
+
+    .card {
+        width: 80% !important;
+        margin-bottom: 20px;
+        margin-top: 0px;
+    }
+
+
+    .all-projects {
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
