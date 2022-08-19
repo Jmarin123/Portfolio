@@ -32,6 +32,10 @@
     text-decoration: none;
 }
 
+.solo-j {
+    display: none;
+}
+
 .brand:hover {
     color: white;
 }
@@ -145,14 +149,17 @@
 .hero-text {
     /* padding-left: 20px; */
     text-align: center;
+    cursor: default;
 }
 
 .hero-text h5 {
     font-size: clamp(10px, 1.7vw, 20px);
+    cursor: default;
 }
 
 .intro {
     font-size: clamp(16px, 3vw, 64px);
+    cursor: default;
 }
 
 .hero-buttons {
@@ -193,11 +200,8 @@
 }
 
 .title {
-    background: -webkit-linear-gradient(320deg, white, red);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: white;
     font-size: clamp(1rem, 7vw, 10rem);
-    filter: drop-shadow(6px 6px #333);
 }
 
 .resume:hover {
@@ -249,7 +253,7 @@
     padding: 10px;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-    transition: border-width 0.2s;
+    transition: border-width 0.3s;
 }
 
 
@@ -267,58 +271,122 @@
 }
 
 .card {
-    display: inline-block;
-    margin-bottom: auto;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: 20px;
     box-sizing: border-box;
     height: auto;
-    box-shadow: 15px 15px 10px -15px #111;
-    width: 20rem !important;
+    box-shadow: 0 3px 8px #000;
+    width: 20rem;
     margin-top: 10px;
+    border-radius: 10px;
+    transition: all 300ms ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0px 10px 40px;
+    transform: scale(1.05);
+}
+
+.yelp-pic {
+    min-height: 200px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url("../images/testYelp.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.enigma-pic {
+    min-height: 200px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url("../images/testEnigma.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.music-pic {
+
+    min-height: 200px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background: url("../images/IMG-0294.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+
 }
 
 .card-title {
     font-size: clamp(15px, 2vw, 20px);
+    text-align: center;
+    margin: 10px;
 }
 
 .card-text {
     font-size: clamp(10px, 2vw, 15px);
+    font-weight: 30;
+    padding: 10px;
 }
 
 .card-body {
-    box-sizing: border-box;
-    height: auto;
+    display: flex;
+    flex-flow: column;
+    height: 100%;
 }
+
 
 .card-buttons {
     display: flex;
-    align-items: center;
+    margin: 10px;
+    align-items: flex-end;
     justify-content: space-evenly;
-    margin-top: 90px;
+    height: 100%;
 }
 
-.sourceCode {
+
+.card-reference {
     margin: 0px 10px;
     font-size: clamp(10px, 2vw, 16px);
     background-color: #e8421e;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 5px;
+    padding: .5em 1em;
     transition: background-color 0.2s;
+    cursor: pointer;
 }
 
 
+.sourceCode:hover {
+    background-color: #c43618;
+}
 
 .live-test {
+    background-color: #28a745;
+}
+
+.live-test:hover {
+    background-color: #208537;
+}
+
+
+/* .live-test {
     margin: 0px 10px;
     font-size: clamp(10px, 2vw, 16px);
     background-color: grey;
     color: white;
     border: none;
     border-radius: 4px;
-    padding: 5px;
+    padding: 1em;
     transition: background-color 0.2s;
-}
+    cursor: pointer;
+} */
+
 
 
 @media (min-width: 780px) {
@@ -377,9 +445,18 @@
         margin-left: 10vw;
     } */
 
-    .brand img {
+    /* .brand img {
         width: 250px;
         height: 50px;
+    } */
+
+    .solo-j {
+        display: block;
+        margin-left: 10vw;
+    }
+
+    .full-name {
+        display: none;
     }
 
     .logo {
@@ -467,16 +544,72 @@
         width: 60vw;
     }
 
-    .card {
-        width: 80% !important;
-        margin-bottom: 20px;
-        margin-top: 0px;
-    }
-
-
     .all-projects {
         flex-flow: column;
         justify-content: center;
         align-items: center;
     }
+
+    .card {
+        width: 80%;
+        margin: 10px 0px;
+        height: 600px;
+    }
+
+    .yelp-pic {
+        min-height: 300px;
+    }
+
+    .enigma-pic {
+        min-height: 300px;
+    }
+
+    .music-pic {
+        min-height: 300px;
+    }
+
+    .card-title {
+        font-size: clamp(15px, 4vw, 30px);
+    }
+
+    .card-text {
+        font-size: clamp(10px, 3vw, 20px);
+    }
+
+    .card-buttons {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .container-for-buttons {
+        margin-top: 40px;
+        height: 100%;
+    }
+
+    .tryingClass {
+        width: 100%;
+        height: 50%;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        text-align: center;
+    }
+
+    .finishPlz {
+        width: 100%;
+        height: 50%;
+        padding: 10px;
+        background-color: green;
+        color: white;
+        text-align: center;
+    }
+
+    .card-reference {
+        width: 100%;
+        padding: 0 100%;
+        font-size: clamp(16px, 3vw, 24pxA)
+    }
+
 }

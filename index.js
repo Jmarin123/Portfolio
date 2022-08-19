@@ -7,12 +7,16 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/projects', (req, res) => {
-    res.render('projects.ejs');
+app.use('/about', (req, res) => {
+    res.render('about.ejs');
 });
 
 app.use('/', (req, res) => {
     res.render('landing.ejs');
+})
+
+app.use('*', (res, req) => {
+    req.redirect('/');
 })
 
 const port = process.env.PORT || 3000;
