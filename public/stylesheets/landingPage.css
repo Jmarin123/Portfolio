@@ -367,11 +367,16 @@
 }
 
 .live-test {
-    background-color: #28a745;
+    color: #28a745;
+    border: 1px solid;
+    border-color: #28a745;
+    transition: all 0.2s;
+    background-color: white;
 }
 
 .live-test:hover {
     background-color: #208537;
+    color: white;
 }
 
 
@@ -588,23 +593,6 @@
         height: 100%;
     }
 
-    .tryingClass {
-        width: 100%;
-        height: 50%;
-        padding: 10px;
-        background-color: red;
-        color: white;
-        text-align: center;
-    }
-
-    .finishPlz {
-        width: 100%;
-        height: 50%;
-        padding: 10px;
-        background-color: green;
-        color: white;
-        text-align: center;
-    }
 
     .card-reference {
         width: 100%;
