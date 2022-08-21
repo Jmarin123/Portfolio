@@ -9,16 +9,22 @@
     letter-spacing: 2px;
 }
 
+body {
+    overflow-x: hidden;
+}
 
-.navbar-thing {
+
+.navbar {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     background: #1a1a1a;
-    position: absolute;
+    position: static;
     width: 100%;
     top: 0px;
+    z-index: 2;
+    min-height: 8vh;
     box-shadow: 0px 15px 10px -15px #111;
 }
 
@@ -40,7 +46,21 @@
     color: white;
 }
 
-.navbar-links ul {
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 30px;
+    height: 5px;
+    border-radius: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+.navbar-links {
     margin: 0;
     padding: 0;
     display: flex;
@@ -66,14 +86,11 @@
 }
 
 
-
 .navbar-links li a:hover {
     color: red;
 }
 
 .githubLink {
-
-    /* fontsize 32*/
     font-size: clamp(32px, 3vw, 50px);
 }
 
@@ -81,61 +98,28 @@
     font-size: clamp(32px, 3vw, 50px);
 }
 
-.toggle-button {
-    position: absolute;
-    top: 1.1rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 20px;
 
-}
-
-
-.toggle-button span {
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-    transition: background-color 0.4s;
-}
-
-
-
-.end-foot {
+.contact-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 102vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
     display: flex;
-    background-color: black;
-    flex-flow: column;
-    width: 100%;
-    text-align: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    justify-content: center;
-    color: white;
-    height: auto;
+    transition: width 0.5s ease-in;
 }
 
-.end-foot p {
-    margin-bottom: 1px;
-}
-
-.end-foot a {
-    color: white;
-}
-
-.end-foot a:hover {
-    color: white;
-}
-
-/* main {
-    height: 70vh;
-} */
+.contact-bar {}
 
 .hero-image {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/IMG-0294.jpg") no-repeat;
     background-size: cover;
@@ -147,7 +131,6 @@
 }
 
 .hero-text {
-    /* padding-left: 20px; */
     text-align: center;
     cursor: default;
 }
@@ -168,7 +151,6 @@
 }
 
 .resume {
-    /* width: 250px; */
     margin: 0px 20px;
     font-size: clamp(16px, 2vw, 128px);
     background-color: #e8421e;
@@ -180,8 +162,12 @@
     box-shadow: 0px 15px 10px -15px #111;
 }
 
+.resume:hover {
+    cursor: pointer;
+    background-color: #c80000;
+}
+
 .contact {
-    /* width: 250px; */
     margin: 0px 20px;
     font-size: clamp(16px, 2vw, 128px);
     border: none;
@@ -189,6 +175,11 @@
     padding: 10px 20px;
     box-shadow: 0px 15px 10px -15px #111;
     transition: background-color 0.2s;
+}
+
+.contact:hover {
+    cursor: pointer;
+    background-color: #bababa;
 }
 
 .projects {
@@ -204,15 +195,6 @@
     font-size: clamp(1rem, 7vw, 10rem);
 }
 
-.resume:hover {
-    cursor: pointer;
-    background-color: #c80000;
-}
-
-.contact:hover {
-    cursor: pointer;
-    background-color: #bababa;
-}
 
 .title-for-project {
     width: 100%;
@@ -352,23 +334,30 @@
 .card-reference {
     margin: 0px 10px;
     font-size: clamp(10px, 2vw, 16px);
-    background-color: #e8421e;
-    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     padding: .5em 1em;
-    transition: background-color 0.2s;
+    transition: all 0.2s;
     cursor: pointer;
 }
 
 
+.sourceCode {
+    color: #e8421e;
+    border: 2px solid;
+    border-color: #e8421e;
+    background-color: white;
+    transition: all 0.2s;
+}
+
 .sourceCode:hover {
     background-color: #c43618;
+    color: white;
 }
 
 .live-test {
     color: #28a745;
-    border: 1px solid;
+    border: 2px solid;
     border-color: #28a745;
     transition: all 0.2s;
     background-color: white;
@@ -379,22 +368,34 @@
     color: white;
 }
 
-
-/* .live-test {
-    margin: 0px 10px;
-    font-size: clamp(10px, 2vw, 16px);
-    background-color: grey;
+.end-foot {
+    display: flex;
+    background-color: black;
+    flex-flow: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
     color: white;
-    border: none;
-    border-radius: 4px;
-    padding: 1em;
-    transition: background-color 0.2s;
-    cursor: pointer;
-} */
+    height: auto;
+}
+
+.end-foot p {
+    margin-bottom: 1px;
+}
+
+.end-foot a {
+    color: white;
+}
+
+.end-foot a:hover {
+    color: white;
+}
 
 
 
-@media (min-width: 780px) {
+
+@media only screen and (min-width: 780px) {
     .homeLink::before {
         content: "";
         position: absolute;
@@ -444,111 +445,7 @@
 
 }
 
-@media (max-width: 780px) {
-
-    /* .brand {
-        margin-left: 10vw;
-    } */
-
-    /* .brand img {
-        width: 250px;
-        height: 50px;
-    } */
-
-    .solo-j {
-        display: block;
-        margin-left: 10vw;
-    }
-
-    .full-name {
-        display: none;
-    }
-
-    .logo {
-        margin: 10px;
-    }
-
-
-    /* trynna see this max */
-    .toggle-button {
-        display: flex;
-        transition: color 0.2s;
-    }
-
-    .toggle-button:hover span {
-        background-color: red;
-
-    }
-
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-
-    .navbar-thing {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .navbar-links li {
-        background: rgba(99, 99, 99, 0.5);
-        text-align: center;
-        border-block-style: solid;
-        border-color: rgb(125, 125, 125);
-        border-width: 1px;
-    }
-
-    .navbar-links li:first-child {
-        border-top-width: 0;
-    }
-
-    .navbar-links li:last-child {
-        border-bottom-width: 0;
-    }
-
-    .navbar-links li a {
-        padding: .5rem 1rem;
-    }
-
-    .navbar-links.active {
-        display: flex;
-    }
-
-    .hero-image {
-        justify-content: center;
-        align-items: center;
-    }
-
-    .githubLink {
-
-        /* fontsize 32*/
-        font-size: 32px;
-    }
-
-    .linkedinLink {
-        font-size: 32px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-    }
-
-    .resume {
-        margin-top: 10px;
-        width: 60vw;
-    }
-
-    .contact {
-        margin-top: 10px;
-        width: 60vw;
-    }
-
+@media only screen and (max-width: 1000px) {
     .all-projects {
         flex-flow: column;
         justify-content: center;
@@ -581,23 +478,207 @@
         font-size: clamp(10px, 3vw, 20px);
     }
 
-    .card-buttons {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .container-for-buttons {
-        margin-top: 40px;
-        height: 100%;
-    }
-
-
     .card-reference {
-        width: 100%;
-        padding: 0 100%;
-        font-size: clamp(16px, 3vw, 24pxA)
+        font-size: clamp(12px, 2vw, 20px);
+        padding: 2em 3em;
     }
 
+}
+
+@media only screen and (max-width: 780px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .burger {
+        margin-right: 20px;
+    }
+
+    .burger:hover div {
+        background-color: red;
+    }
+
+    .solo-j {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .full-name {
+        display: none;
+    }
+
+    .logo {
+        margin: 10px;
+    }
+
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 102vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: width 0.5s ease-in;
+    }
+
+
+
+    .navbar-links li {
+        opacity: 0;
+    }
+
+    .navbar-links li a {
+        font-size: 42px;
+    }
+
+    .burger {
+        display: block;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+
+
+    .hero-image {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .githubLink {
+        font-size: 64px;
+    }
+
+    .linkedinLink {
+        font-size: 64px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+    }
+
+    .resume {
+        margin-top: 10px;
+        width: 60vw;
+    }
+
+    .contact {
+        margin-top: 10px;
+        width: 60vw;
+    }
+
+    .navbar-active {
+        width: 100%;
+    }
+
+}
+
+
+@keyframes navLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes navLinkFadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+@keyframes midBarFade {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+}
+
+@keyframes midBarReturn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes topBarFirst {
+    from {
+        transform: rotate(0deg)translate(0px, 0px);
+    }
+
+    to {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+}
+
+@keyframes topBarSecond {
+    from {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    to {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+}
+
+
+@keyframes lastBarFirst {
+    from {
+        transform: rotate(0deg)translate(0px, 0px);
+    }
+
+    to {
+        transform: rotate(45deg) translate(-9px, -6px);
+    }
+}
+
+@keyframes lastBarSecond {
+    from {
+        transform: rotate(45deg) translate(-9px, -6px);
+    }
+
+    to {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
 }
