@@ -11,6 +11,10 @@ app.use('/about', (req, res) => {
     res.render('about.ejs');
 });
 
+app.use('/contact', (req, res) => {
+    res.render('contact.ejs');
+})
+
 app.use('/', (req, res) => {
     res.render('landing.ejs');
 })

@@ -99,23 +99,6 @@ body {
 }
 
 
-.contact-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 102vh;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    transition: width 0.5s ease-in;
-}
-
-.contact-bar {}
-
 .hero-image {
     display: flex;
     flex-direction: column;
@@ -292,7 +275,6 @@ body {
 }
 
 .music-pic {
-
     min-height: 200px;
     width: 100%;
     border-top-left-radius: 10px;
@@ -540,22 +522,22 @@ body {
     }
 
 
-
     .navbar-links li {
         opacity: 0;
     }
 
     .navbar-links li a {
+        display: none;
+        cursor: default;
         font-size: 42px;
     }
+
 
     .burger {
         display: block;
         z-index: 2;
         cursor: pointer;
     }
-
-
 
     .hero-image {
         justify-content: center;
@@ -589,7 +571,9 @@ body {
         width: 100%;
     }
 
+
 }
+
 
 
 @keyframes navLinkFadeIn {

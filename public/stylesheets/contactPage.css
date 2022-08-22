@@ -1,0 +1,82 @@
+body {
+    height: 100%;
+}
+
+.fullscreen {
+    display: flex;
+    min-height: 90vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.email-please {
+    text-align: center;
+    font-size: 64px;
+    margin: 75px 0px 40px 0px;
+}
+
+.email-form {
+    display: flex;
+    align-items: column;
+    width: 70%;
+    min-height: 40vh;
+    margin: 40px 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+}
+
+p {
+    margin: 20px 0;
+}
+
+.email {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+}
+
+.message-label {
+    margin-top: 10px;
+}
+
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px #999;
+    margin: 10px 0;
+}
+
+.error-empty {
+    display: none;
+    font-size: 12px;
+    color: red;
+}
+
+.button-form {
+    font-size: clamp(15px, 2vw, 20px);
+    width: 10em;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #e8421e;
+    color: white;
+    margin: auto;
+    margin-top: 15px;
+    box-shadow: 1px 1px 5px -1px #111;
+    transition: background-color 0.2s ease;
+}
+
+.button-form:hover {
+    background-color: #c43618;
+}

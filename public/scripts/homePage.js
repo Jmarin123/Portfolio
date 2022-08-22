@@ -1,10 +1,12 @@
 const burger = document.getElementsByClassName('burger')[0];
 const navbar = document.getElementsByClassName('navbar-links')[0];
 const navLinks = document.querySelectorAll('.navbar-links li');
+const allNavLinks = document.querySelectorAll('.navbar-links li a');
 const midBar = document.getElementsByClassName('bar2')[0];
 const topBar = document.getElementsByClassName('bar1')[0];
 const lastBar = document.getElementsByClassName('bar3')[0];
 const fullNav = document.getElementsByClassName('navbar')[0];
+const contactLink = document.getElementsByClassName('contact-screen')[0];
 
 burger.addEventListener('click', () => {
     navbar.classList.toggle('navbar-active');
@@ -15,8 +17,11 @@ burger.addEventListener('click', () => {
             link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index / 7}s`
         }
     });
-    burger.classList.toggle('toggle');
     if (navbar.classList.contains('navbar-active')) {
+        allNavLinks.forEach((link) => {
+            link.style.display = 'block';
+            link.style.cursor = 'pointer';
+        })
         disableScroll();
         topBar.style.animation = 'topBarFirst 1s ease forwards';
         midBar.style.animation = 'midBarFade 1s ease forwards';
@@ -28,6 +33,8 @@ burger.addEventListener('click', () => {
         lastBar.style.animation = 'lastBarSecond 1s ease forwards';
     }
 })
+
+
 
 window.addEventListener('resize', function (event) {
     var newWidth = window.innerWidth;
