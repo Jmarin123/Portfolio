@@ -8,7 +8,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/about', (req, res) => {
-    res.render('about.ejs');
+    res.render('aboutMe.ejs');
 });
 
 app.use('/contact', (req, res) => {

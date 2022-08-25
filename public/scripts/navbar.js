@@ -6,7 +6,6 @@ const midBar = document.getElementsByClassName('bar2')[0];
 const topBar = document.getElementsByClassName('bar1')[0];
 const lastBar = document.getElementsByClassName('bar3')[0];
 const fullNav = document.getElementsByClassName('navbar')[0];
-const contactLink = document.getElementsByClassName('contact-screen')[0];
 
 burger.addEventListener('click', () => {
     navbar.classList.toggle('navbar-active');

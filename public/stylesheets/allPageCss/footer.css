@@ -1,0 +1,23 @@
+.end-foot {
+    display: flex;
+    background-color: black;
+    flex-flow: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    height: auto;
+}
+
+.end-foot p {
+    margin-bottom: 1px;
+}
+
+.end-foot a {
+    color: white;
+}
+
+.end-foot a:hover {
+    color: white;
+}

@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu';
+    letter-spacing: 2px;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: #1a1a1a;
+    position: static;
+    width: 100%;
+    top: 0px;
+    z-index: 2;
+    min-height: 8vh;
+    box-shadow: 0px 15px 10px -15px #111;
+}
+
+.logo {
+    /* margin-left: 4rem; if we use space between*/
+    margin: 10px;
+}
+
+.brand {
+    color: white;
+    text-decoration: none;
+}
+
+.solo-j {
+    display: none;
+}
+
+.brand:hover {
+    color: white;
+}
+
+.burger {
+    display: none;
+}
+
+.burger div {
+    width: 30px;
+    height: 5px;
+    border-radius: 4px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+.navbar-links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navbar-links li a {
+    text-decoration: none;
+    /* pink #f8c8dc; */
+    position: relative;
+    color: white;
+    padding: 1em;
+    font-size: clamp(12px, 2vw, 20px);
+    display: block;
+    transition: color 0.2s;
+}
+
+
+.navbar-links li a:hover {
+    color: red;
+}
+
+.githubLink {
+    font-size: clamp(32px, 3vw, 50px);
+}
+
+.linkedinLink {
+    font-size: clamp(32px, 3vw, 50px);
+}
+
+@media only screen and (max-width: 780px) {
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    body {
+        -ms-overflow-style: none;
+        /* IE and Edge */
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+
+    .burger {
+        margin-right: 20px;
+    }
+
+    .burger:hover div {
+        background-color: red;
+    }
+
+    .solo-j {
+        display: block;
+        margin-left: 20px;
+    }
+
+    .full-name {
+        display: none;
+    }
+
+    .logo {
+        margin: 10px;
+    }
+
+
+    .navbar-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 102vh;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        transition: width 0.5s ease-in;
+    }
+
+
+    .navbar-links li {
+        opacity: 0;
+    }
+
+    .navbar-links li a {
+        display: none;
+        cursor: default;
+        font-size: 42px;
+    }
+
+
+    .burger {
+        display: block;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hero-image {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .githubLink {
+        font-size: 64px;
+    }
+
+    .linkedinLink {
+        font-size: 64px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+    }
+
+    .navbar-active {
+        width: 100%;
+    }
+}

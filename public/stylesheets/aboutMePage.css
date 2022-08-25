@@ -1,0 +1,134 @@
+.main-about {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.container-for-text {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.myself {
+    opacity: 0;
+    border-radius: 50%;
+    /* background-color: rgb(169, 64, 141); */
+    margin: 0 3rem;
+    animation-name: fadeInPic;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    /*webkit*/
+    -webkit-animation-fill-mode: forwards;
+}
+
+.about-myself {
+    height: 100%;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 10rem;
+}
+
+.selfie-image {
+    /* 40vw */
+    width: 40vw;
+    max-width: 700px;
+    min-width: 200px;
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translateY(4px);
+}
+
+.who-am {
+    opacity: 0;
+}
+
+.paragraph {
+    opacity: 0;
+}
+
+
+@media only screen and (max-width: 780px) {
+    .container-for-text {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .myself {
+        margin: auto;
+    }
+
+    .about-myself {
+        margin: 0;
+    }
+
+    /* .who-am {
+        animation-name: fadeInText;
+        animation-duration: 2s;
+    }
+
+    .paragraph {
+        animation-name: fadeInText;
+        animation-duration: 2s;
+    } */
+}
+
+
+@keyframes fadeInPic {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 100;
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes fadeInTextFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 100;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInTextFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 100;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeInTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 100;
+        transform: translateY(0px);
+    }
+}

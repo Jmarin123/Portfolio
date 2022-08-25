@@ -6,71 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
-    <link rel="stylesheet" href="/stylesheets/landingPage.css">
+    <link rel="stylesheet" href="/stylesheets/AllPageCss/navbar.css">
     <link rel="stylesheet" href="/stylesheets/contactPage.css">
+    <link rel="stylesheet" href="/stylesheets/AllPageCss/footer.css">
 </head>
 
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#" class="brand">
-                <img src="../images/Fixing.png" alt="Jason Osorio Marin Logo" width="240px" height="60px"
-                    class="full-name">
-                <!-- This is the smaller css-->
-                <img src="../images/Solo_J.png" alt="Jason Osorio Marin Logo" width="30px" height="40px" class="solo-j">
-                <!-- <img src="../images/Untitled_Artwork.png" width="200px" height="100px" alt="Jason Osorio"
-                    class="image-brand"> -->
-            </a>
-        </div>
-        <ul class="navbar-links">
-            <li><a href="/" class="homeLink">Home</a></li>
-            <li><a href="/about" class="aboutLink">About</a></li>
-            <li><a href="/contact" class="contactLink">Contact</a></li>
-            <li>
-                <a href="https://github.com/Jmarin123" target="_blank" rel="noopener noreferrer">
-                    <ion-icon class="githubLink" name="logo-github"></ion-icon>
-                </a>
-                <a href="https://www.linkedin.com/in/jason-osorio-marin-a23b6b1a4/" target="_blank"
-                    rel="noopener noreferrer">
-                    <ion-icon class="linkedinLink" name="logo-linkedin"></ion-icon>
-                </a>
-                <!-- where we add icons -->
-            </li>
-        </ul>
-        <div class="burger">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-    </nav>
-    <main>
-        <div class="fullscreen">
-            <h1 class="email-please">Contact Me</h1>
-            <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
-            <div class="email-form">
-                <form action="https://formsubmit.co/jomarin002@gmail.com" method="post" id="userform"
-                    target="dummyframe">
-                    <label for="email"><strong>Your Email:</strong></label>
-                    <input type="email" name="email" placeholder="Email Address" class="email" required>
-                    <label name="message" class="message-label"><strong>Your Message:</strong></label>
-                    <textarea rows="7" name="message" id="comment" form="userform"
-                        placeholder="Leave Your Message Here"></textarea>
-                    <div class="error-empty">*Message Cannot Be Empty</div>
-                    <button type="submit" class="button-form">Send</button>
-                </form>
+    <%- include('./partials/navbar.ejs') %>
+        <main>
+            <div class="fullscreen">
+                <h1 class="email-please">Contact Me</h1>
+                <iframe name="dummyframe" id="dummyframe" style="display: none"></iframe>
+                <div class="email-form">
+                    <form action="https://formsubmit.co/jomarin002@gmail.com" method="post" id="userform"
+                        target="dummyframe">
+                        <label for="email" class="email-label"><strong>Your Email:</strong></label>
+                        <input type="email" name="email" placeholder="Email Address" class="email" required>
+                        <label name="message" class="message-label"><strong>Your Message:</strong></label>
+                        <textarea rows="7" name="message" id="comment" form="userform"
+                            placeholder="Leave Your Message Here"></textarea>
+                        <div class="error-empty">*Message Cannot Be Empty</div>
+                        <button type="submit" class="button-form">Send</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <footer class="end-foot">
-        <p>&#169 2022 Jason Osorio. All Rights Reserved.</p>
-        <p>Logo created by <a href="https://ko-fi.com/stardustco" target="_blank"
-                rel="noopener noreferrer">StardustCo</a>.</p>
-    </footer>
-    <script src="/scripts/homePage.js"></script>
-    <script src="/scripts/contactPage.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <%- include('./partials/footer.ejs') %>
+            <script src="/scripts/contactPage.js"></script>
 </body>
 
 </html>
