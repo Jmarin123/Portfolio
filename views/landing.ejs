@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/allPageCss/navbar.css">
     <link rel="stylesheet" href="/stylesheets/landingPage.css">
     <link rel="stylesheet" href="/stylesheets/allPageCss/footer.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 </head>
 
 <body>
@@ -40,7 +41,7 @@
                     </div>
                 </div>
                 <div class="all-projects">
-                    <div class="card yelpcamp">
+                    <div class="card yelpcamp tag">
                         <div class="yelp-pic"></div>
                         <div class="card-body">
                             <h5 class="card-title">YelpCamp</h5>
@@ -59,7 +60,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card enigma">
+                    <div class="card enigma tag">
                         <div class="enigma-pic"></div>
                         <div class="card-body">
                             <h5 class="card-title">Enigma Machine</h5>
@@ -76,7 +77,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="card musicAPI">
+                    <div class="card musicAPI tag">
                         <div class="music-pic"></div>
                         <div class="card-body">
                             <h5 class="card-title">Music API</h5>
@@ -93,15 +94,13 @@
 
                     </div>
 
-
-
                 </div>
             </div>
         </main>
 
 
         <%- include('./partials/footer.ejs') %>
-
+            <script src="/scripts/landingPage.js"></script>
 </body>
 
 </html>

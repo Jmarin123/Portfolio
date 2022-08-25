@@ -17,15 +17,35 @@
     cursor: default;
 }
 
-.hero-text h5 {
-    font-size: clamp(10px, 1.7vw, 20px);
-    cursor: default;
-}
-
 .intro {
+    opacity: 0;
     font-size: clamp(16px, 3vw, 64px);
     cursor: default;
+    animation-name: fadeFromTop;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    animation-fill-mode: forwards;
 }
+
+.title {
+    opacity: 0;
+    color: white;
+    font-size: clamp(1rem, 7vw, 10rem);
+    animation-name: fadeFromTop;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
+}
+
+.hero-text h5 {
+    opacity: 0;
+    font-size: clamp(10px, 1.7vw, 20px);
+    cursor: default;
+    animation-name: fadeFromTop;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
 
 .hero-buttons {
     display: flex;
@@ -33,6 +53,7 @@
 }
 
 .resume {
+    opacity: 0;
     margin: 0px 20px;
     font-size: clamp(16px, 2vw, 128px);
     background-color: #e8421e;
@@ -42,6 +63,10 @@
     padding: 10px 20px;
     transition: background-color 0.2s;
     box-shadow: 0px 15px 10px -15px #111;
+    animation-name: fadeFromLeft;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
+
 }
 
 .resume:hover {
@@ -50,6 +75,7 @@
 }
 
 .contact {
+    opacity: 0;
     margin: 0px 20px;
     font-size: clamp(16px, 2vw, 128px);
     border: none;
@@ -57,6 +83,9 @@
     padding: 10px 20px;
     box-shadow: 0px 15px 10px -15px #111;
     transition: background-color 0.2s;
+    animation-name: fadeFromRight;
+    animation-duration: 1.3s;
+    animation-fill-mode: forwards;
 }
 
 .contact:hover {
@@ -71,12 +100,6 @@
     flex-flow: column;
     height: auto;
 }
-
-.title {
-    color: white;
-    font-size: clamp(1rem, 7vw, 10rem);
-}
-
 
 .title-for-project {
     width: 100%;
@@ -253,56 +276,6 @@
 
 
 
-@media only screen and (min-width: 780px) {
-    .homeLink::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 0;
-        height: 5px;
-        background-color: red;
-        transition: width 0.25s ease-out;
-    }
-
-    .homeLink:hover::before {
-        width: 100%;
-    }
-
-
-    .aboutLink::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 5px;
-        background-color: red;
-        transition: width 0.25s ease-out;
-    }
-
-    .aboutLink:hover::before {
-        width: 100%;
-    }
-
-    .contactLink::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 0;
-        height: 5px;
-        background-color: red;
-        transition: width 0.25s ease-out;
-    }
-
-    .contactLink:hover::before {
-        width: 100%;
-    }
-
-}
-
 @media only screen and (max-width: 1000px) {
     .all-projects {
         flex-flow: column;
@@ -358,12 +331,34 @@
 
 }
 
+.tag {
+    opacity: 0;
+    transform: translate(0, 10vh);
+    transition: all 1s;
+}
+
+.tag.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
 
 
-@keyframes navLinkFadeIn {
+@keyframes fadeFromTop {
     from {
         opacity: 0;
-        transform: translateX(50px);
+        transform: translateY(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes fadeFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
     }
 
     to {
@@ -372,32 +367,7 @@
     }
 }
 
-@keyframes navLinkFadeOut {
-    from {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-}
-
-@keyframes midBarFade {
-    from {
-        opacity: 1;
-        transform: translateX(0px);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateX(50px);
-    }
-
-}
-
-@keyframes midBarReturn {
+@keyframes fadeFromRight {
     from {
         opacity: 0;
         transform: translateX(50px);
@@ -406,47 +376,5 @@
     to {
         opacity: 1;
         transform: translateX(0px);
-    }
-}
-
-
-@keyframes topBarFirst {
-    from {
-        transform: rotate(0deg)translate(0px, 0px);
-    }
-
-    to {
-        transform: rotate(-45deg) translate(-9px, 6px);
-    }
-}
-
-@keyframes topBarSecond {
-    from {
-        transform: rotate(-45deg) translate(-9px, 6px);
-    }
-
-    to {
-        transform: rotate(0deg) translate(0px, 0px);
-    }
-}
-
-
-@keyframes lastBarFirst {
-    from {
-        transform: rotate(0deg)translate(0px, 0px);
-    }
-
-    to {
-        transform: rotate(45deg) translate(-9px, -6px);
-    }
-}
-
-@keyframes lastBarSecond {
-    from {
-        transform: rotate(45deg) translate(-9px, -6px);
-    }
-
-    to {
-        transform: rotate(0deg) translate(0px, 0px);
     }
 }

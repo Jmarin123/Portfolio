@@ -142,6 +142,7 @@ body {
         top: 0;
         right: 0;
         width: 0%;
+        z-index: 1;
         height: 102vh;
         background-color: rgba(0, 0, 0, 0.9);
         color: white;
@@ -190,5 +191,148 @@ body {
 
     .navbar-active {
         width: 100%;
+        z-index: 1;
+    }
+}
+
+@media only screen and (min-width: 780px) {
+    .homeLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .homeLink:hover::before {
+        width: 100%;
+    }
+
+
+    .aboutLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .aboutLink:hover::before {
+        width: 100%;
+    }
+
+    .contactLink::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 5px;
+        background-color: red;
+        transition: width 0.25s ease-out;
+    }
+
+    .contactLink:hover::before {
+        width: 100%;
+    }
+
+}
+
+
+@keyframes navLinkFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes navLinkFadeOut {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+}
+
+@keyframes midBarFade {
+    from {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+}
+
+@keyframes midBarReturn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+@keyframes topBarFirst {
+    from {
+        transform: rotate(0deg)translate(0px, 0px);
+    }
+
+    to {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+}
+
+@keyframes topBarSecond {
+    from {
+        transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    to {
+        transform: rotate(0deg) translate(0px, 0px);
+    }
+}
+
+
+@keyframes lastBarFirst {
+    from {
+        transform: rotate(0deg)translate(0px, 0px);
+    }
+
+    to {
+        transform: rotate(45deg) translate(-9px, -6px);
+    }
+}
+
+@keyframes lastBarSecond {
+    from {
+        transform: rotate(45deg) translate(-9px, -6px);
+    }
+
+    to {
+        transform: rotate(0deg) translate(0px, 0px);
     }
 }
