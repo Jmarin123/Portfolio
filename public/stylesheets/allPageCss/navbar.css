@@ -265,6 +265,7 @@ body {
     }
 
     to {
+        /* display: none; */
         opacity: 0;
         transform: translateX(50px);
     }

@@ -13,13 +13,14 @@ burger.addEventListener('click', () => {
         if (!navbar.classList.contains('navbar-active')) {
             link.style.animation = `navLinkFadeOut 0.5s ease forwards`;
         } else {
-            link.style.animation = `navLinkFadeIn 0.5s ease forwards ${index / 7}s`
+            link.style.animation = `navLinkFadeIn 0.5s ease forwards ${(index + 1) / 7}s`
         }
     });
     if (navbar.classList.contains('navbar-active')) {
         allNavLinks.forEach((link) => {
             link.style.display = 'block';
             link.style.cursor = 'pointer';
+
         })
         disableScroll();
         topBar.style.animation = 'topBarFirst 1s ease forwards';
@@ -30,6 +31,12 @@ burger.addEventListener('click', () => {
         topBar.style.animation = 'topBarSecond 1s ease forwards';
         midBar.style.animation = 'midBarReturn 1s ease forwards';
         lastBar.style.animation = 'lastBarSecond 1s ease forwards';
+        setTimeout(function () {
+            allNavLinks.forEach((link) => {
+                link.style.display = 'none';
+                link.style.cursor = 'default';
+            })
+        }, 500);
     }
 })
 
@@ -43,6 +50,11 @@ window.addEventListener('resize', function (event) {
                 link.style.animation = '';
             }
         });
+        allNavLinks.forEach((link) => {
+            link.style.display = 'block';
+            link.style.cursor = 'pointer';
+
+        })
         enableScroll();
     } else {
         if (navbar.classList.contains('navbar-active')) {

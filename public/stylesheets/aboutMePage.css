@@ -13,6 +13,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+    margin-bottom: 40px;
 }
 
 .myself {
@@ -28,13 +29,15 @@
 }
 
 .about-myself {
-    height: 100%;
-    width: 40%;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
+
+    height: 100%;
+    width: 40%;
     margin-right: 10rem;
+
 }
 
 .selfie-image {
@@ -49,6 +52,7 @@
 }
 
 .who-am {
+    margin: 40px 0px;
     opacity: 0;
 }
 
@@ -70,6 +74,7 @@
 
     .about-myself {
         margin: 0;
+        width: 80%;
     }
 
     /* .who-am {
